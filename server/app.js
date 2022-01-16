@@ -16,7 +16,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
-
+app.use( express.static( "./dist" ) );
+ app.use( "*", ( req, res ) => {
+   res.sendFile( path.resolve("dist", "index.html" ) );
+  } );
 // error handler
 app.use((err, req, res, next) => {
     if (err.name === 'ValidationError') {

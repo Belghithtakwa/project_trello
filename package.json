@@ -1,0 +1,25 @@
+{
+  "name": "trello_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && npm start",
+    "server": "cd server && npm start",
+    "client:install": "cd client && npm i",
+    "server:install": "cd server && npm i",
+    "start": "cd server && npm start",
+    "Heroku-postbuild": "NPM_CONFIG_PRODUCTION=FALSE cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Belghithtakwa/project_trello.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Belghithtakwa/project_trello/issues"
+  },
+  "homepage": "https://github.com/Belghithtakwa/project_trello#readme"
+}

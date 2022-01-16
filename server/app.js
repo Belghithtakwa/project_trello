@@ -8,7 +8,7 @@ const cors = require('cors');
 const passport = require('passport');
 
 const rtsIndex = require('./routes/index.router');
-
+const path = require("path");
 var app = express();
 
 // middleware
@@ -28,6 +28,10 @@ app.use((err, req, res, next) => {
         console.log(err);
     }
 });
+app.use( express.static( "./dist/Angular6" ) );
+app.use( "*", ( req, res ) => {
+    res.sendFile( path.resolve("dist/Angular6", "index.html" ) );
+} );
 const port = process.env.PORT || 3000;
 // start server
 

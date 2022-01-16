@@ -16,10 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
-app.use( express.static( "./dist" ) );
- app.use( "*", ( req, res ) => {
-   res.sendFile( path.resolve("dist", "index.html" ) );
-  } );
+
 // error handler
 app.use((err, req, res, next) => {
     if (err.name === 'ValidationError') {
@@ -31,6 +28,7 @@ app.use((err, req, res, next) => {
         console.log(err);
     }
 });
-
+const port = process.env.PORT || 3000;
 // start server
-app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
+
+app.listen(port, () => console.log(`Server started at port : ${port}`));
